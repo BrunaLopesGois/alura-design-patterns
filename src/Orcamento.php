@@ -5,18 +5,15 @@ namespace Alura\DesignPattern;
 use Alura\DesignPattern\EstadosOrcamento\EmAprovacao;
 use Alura\DesignPattern\EstadosOrcamento\EstadoOrcamento;
 
-class Orcamento
+class Orcamento implements Orcavel
 {
-    /** @var int */
-    public $quantidadeItens;
-    /** @var float */
-    public $valor;
-    /** @var EstadoOrcamento */
-    public $estadoAtual;
+    private array $itens;
+    public EstadoOrcamento $estadoAtual;
 
     public function __construct()
     {
         $this->estadoAtual = new EmAprovacao();
+        $this->itens = [];
     }
 
     public function aplicaDescontoExtra()
@@ -36,5 +33,19 @@ class Orcamento
     public function finaliza()
     {
         $this->estadoAtual->finaliza($this);
+    }
+
+    public function adicionaItem(Orcavel $item)
+    {
+        $this->itens[] = $item;
+    }
+
+    public function valor(): float
+    {
+        return array_reduce(
+            $this->itens,
+            fn (float $valorAcumulado, Orcavel $item) => $item->valor() + $valorAcumulado,
+            0
+        );
     }
 }
