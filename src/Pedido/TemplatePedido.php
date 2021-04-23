@@ -1,8 +1,8 @@
 <?php
 
-namespace Alura\DesignPattern;
+namespace Alura\DesignPattern\Pedido;
 
-class DadosExtrinsecosPedido
+class TemplatePedido
 {
     /** @var string */
     private $nomeCliente;

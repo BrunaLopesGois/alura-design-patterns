@@ -8,7 +8,7 @@ use Alura\DesignPattern\AcoesAoGerarPedido\LogGerarPedido;
 use Alura\DesignPattern\GerarPedido;
 use Alura\DesignPattern\GerarPedidoHandler;
 use Alura\DesignPattern\Orcamento;
-use Alura\DesignPattern\Pedido;
+use Alura\DesignPattern\Pedido\Pedido;
 
 $valorOrcamento = $argv[1];
 $numeroDeItens = $argv[2];

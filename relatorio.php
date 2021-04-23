@@ -1,7 +1,7 @@
 <?php
 
 use Alura\DesignPattern\Orcamento;
-use Alura\DesignPattern\Pedido;
+use Alura\DesignPattern\Pedido\Pedido;
 use Alura\DesignPattern\Relatorio\ArquivoXmlExportado;
 use Alura\DesignPattern\Relatorio\ArquivoZipExportado;
 use Alura\DesignPattern\Relatorio\OrcamentoExportado;
